@@ -75,7 +75,7 @@ app.post('/webhook/', function (req, res) {
 	                let botOut = JSON.parse(body)
 	
 	                if (botOut.utterance != null){     
-					   sendTextMessage(sender, botOut.utterance)
+					   sendTextMessage(sender, botOut.botUtterance)
                     }
 				} else {
                     sendTextMessage(sender, 'Error!')
