@@ -88,8 +88,9 @@ app.post('/webhook/', function (req, res) {
 })
 
 function sendTextMessage(sender, text) {
-    let textToDisplay = processText(botOut.utterance);
-	if (textToDisplay != 'null'){
+    //let textToDisplay = processText(botOut.utterance);
+	let textToDisplay = botOut.utterance;
+    if (textToDisplay != 'null'){
         let messageData = { 'text':textToDisplay }
         request({
             url: 'https://graph.facebook.com/v2.6/me/messages',
