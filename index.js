@@ -55,7 +55,7 @@ app.post('/webhook/', function (req, res) {
         // we call the MessengerBot here..
 		if (event.message && event.message.text) {
             let text = event.message.text
-            
+            text = text.replace(/%2C/g, ',')
 			//send it to the bot
 			request({
 				url: msngerServerUrl,
